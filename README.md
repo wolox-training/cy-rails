@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+[![Build Status](https://travis-ci.com/wolox-training/cy-rails.svg?branch=master)](https://travis-ci.com/wolox-training/cy-rails)
