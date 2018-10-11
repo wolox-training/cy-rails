@@ -4,3 +4,9 @@ LineLength:
   Max: 99
 Style/FrozenStringLiteralComment:
   Enabled: false
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
