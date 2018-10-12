@@ -30,3 +30,5 @@
 /test/*
 
 /credentials.yml.enc
+
+.DS_Store
