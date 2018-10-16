@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_131809) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.json "tokens"
-    t.integer "sign_in_count"
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.string "last_sign_in_at"
     t.string "last_sign_in_ip"
@@ -45,12 +45,11 @@ ActiveRecord::Schema.define(version: 2018_10_16_131809) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "provider"
-    t.string "uid"
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["provider"], name: "index_users_on_provider"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["uid"], name: "index_users_on_uid"
+    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
 end
