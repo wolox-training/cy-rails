@@ -20,17 +20,17 @@ describe Book, type: :model do
 
   subject(:Book) do
     Book.new(
-      genre: genre, author: author, image: image, title: title,
+      genre: genre, author: author, title: title,
       publisher: publisher, year: year
     )
   end
 
-  let(:genero)  { Faker::Book.genre }
-  let(:autor)   { Faker::Book.author }
+  let(:genre)  { Faker::Book.genre }
+  let(:author)   { Faker::Book.author }
   let(:image)   { 'imagen.png' }
-  let(:titulo)  { Faker::Book.title }
-  let(:editor)  { Faker::Book.publisher }
-  let(:anio)    { Time.now.in_time_zone }
+  let(:title)  { Faker::Book.title }
+  let(:publisher)  { Faker::Book.publisher }
+  let(:year)    { Time.now.in_time_zone }
 
   describe '#create' do
     context 'When the genre is nil' do
@@ -43,13 +43,6 @@ describe Book, type: :model do
 
     context 'When the author is nil' do
       let(:author) { nil }
-
-      it do
-        is_expected.to be_invalid
-      end
-    end
-    context 'When the image is nil' do
-      let(:image) { nil }
 
       it do
         is_expected.to be_invalid
