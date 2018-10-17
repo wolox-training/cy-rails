@@ -3,28 +3,25 @@ require 'faker'
 
 describe Book, type: :model do
   it do
-    is_expected.to validate_presence_of(:genero)
+    is_expected.to validate_presence_of(:genre)
   end
   it do
-    is_expected.to validate_presence_of(:autor)
+    is_expected.to validate_presence_of(:author)
   end
   it do
-    is_expected.to validate_presence_of(:image)
+    is_expected.to validate_presence_of(:title)
   end
   it do
-    is_expected.to validate_presence_of(:titulo)
+    is_expected.to validate_presence_of(:publisher)
   end
   it do
-    is_expected.to validate_presence_of(:editor)
-  end
-  it do
-    is_expected.to validate_presence_of(:anio)
+    is_expected.to validate_presence_of(:year)
   end
 
   subject(:Book) do
     Book.new(
-      genero: genero, autor: autor, image: image, titulo: titulo,
-      editor: editor, anio: anio
+      genre: genre, author: author, image: image, title: title,
+      publisher: publisher, year: year
     )
   end
 
@@ -36,16 +33,16 @@ describe Book, type: :model do
   let(:anio)    { Time.now.in_time_zone }
 
   describe '#create' do
-    context 'When the genero is nil' do
-      let(:genero) { nil }
+    context 'When the genre is nil' do
+      let(:genre) { nil }
 
       it do
         is_expected.to be_invalid
       end
     end
 
-    context 'When the autor is nil' do
-      let(:autor) { nil }
+    context 'When the author is nil' do
+      let(:author) { nil }
 
       it do
         is_expected.to be_invalid
@@ -58,22 +55,22 @@ describe Book, type: :model do
         is_expected.to be_invalid
       end
     end
-    context 'When the titulo is nil' do
-      let(:titulo) { nil }
+    context 'When the title is nil' do
+      let(:title) { nil }
 
       it do
         is_expected.to be_invalid
       end
     end
-    context 'When the editor is nil' do
-      let(:editor) { nil }
+    context 'When the publisher is nil' do
+      let(:publisher) { nil }
 
       it do
         is_expected.to be_invalid
       end
     end
-    context 'When the anio is nil' do
-      let(:anio) { nil }
+    context 'When the year is nil' do
+      let(:year) { nil }
 
       it do
         is_expected.to be_invalid
