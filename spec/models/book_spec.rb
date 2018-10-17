@@ -25,12 +25,12 @@ describe Book, type: :model do
     )
   end
 
-  let(:genre)  { Faker::Book.genre }
-  let(:author)   { Faker::Book.author }
-  let(:image)   { 'imagen.png' }
-  let(:title)  { Faker::Book.title }
-  let(:publisher)  { Faker::Book.publisher }
-  let(:year)    { Time.now.in_time_zone }
+  let(:genre) { Faker::Book.genre }
+  let(:author)  { Faker::Book.author }
+  let(:image) { 'imagen.png' }
+  let(:title) { Faker::Book.title }
+  let(:publisher) { Faker::Book.publisher }
+  let(:year) { Time.now.in_time_zone }
 
   describe '#create' do
     context 'When the genre is nil' do
