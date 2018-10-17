@@ -3,7 +3,6 @@ require 'faker'
 
 describe Book, type: :model do
   it do
-    
     is_expected.to validate_presence_of(:genre)
   end
   it do
