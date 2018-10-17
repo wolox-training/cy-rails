@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_131809) do
   create_table "books", force: :cascade do |t|
     t.string "genre", null: false
     t.string "author", null: false
-    t.string "image", null: false
+    t.string "image"
     t.string "title", null: false
     t.string "publisher", null: false
     t.string "year", null: false
