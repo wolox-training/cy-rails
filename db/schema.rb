@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 2018_10_16_131809) do
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
-    t.string "genero", null: false
-    t.string "autor", null: false
+    t.string "genre", null: false
+    t.string "author", null: false
     t.string "image", null: false
-    t.string "titulo", null: false
-    t.string "editor", null: false
-    t.string "anio", null: false
+    t.string "title", null: false
+    t.string "publisher", null: false
+    t.string "year", null: false
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
