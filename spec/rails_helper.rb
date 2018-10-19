@@ -1,10 +1,12 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
-require expand_path('../../config/environment', __dirc__)
-# Prevent database truncation if the environment is production
-abort('The Rails environment is running in production mode!') if Rails.env.production?
+require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
+require 'shoulda-matchers'
+require 'factory_bot'
+ENV['RAILS_ENV'] ||= 'test'
+# Prevent database truncation if the environment is production
+# abort('The Rails environment is running in production mode!') if Rails.env.production?
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -31,6 +33,14 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+  config.include FactoryBot::Syntax::Methods
+  config.before(:all) do
+    FactoryBot.factories.clear
+    FactoryBot.sequences.clear
+    FactoryBot.find_definitions
+  end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -59,13 +69,11 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     # Choose a test framework:
     with.test_framework :rspec
-    # with.test_framework :minitest
-    # with.test_framework :minitest_4
-    # with.test_framework :test_unit
 
     # Choose one or more libraries:
     with.library :active_record

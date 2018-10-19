@@ -30,3 +30,7 @@
 /test/*
 
 /credentials.yml.enc
+
+.vscode/
+
+.DS_Store
