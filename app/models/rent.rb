@@ -10,8 +10,8 @@ class Rent < ApplicationRecord
     init_date < end_date
   end
 
-  def overlap_dates
-    Rent.where(book_id: id).where.not(book_id: id).where(
+  def self.overlap_dates(book_id, id, init_date, end_date)
+    Rent.where(book_id: book_id).where.not(id: id).where(
       "DATE(:init_date) BETWEEN init_date AND end_date OR
       DATE(:end_date) BETWEEN init_date AND end_date OR
       init_date BETWEEN :init_date AND :end_date OR
