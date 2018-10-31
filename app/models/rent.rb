@@ -26,6 +26,6 @@ class Rent < ApplicationRecord
   end
 
   def send_mail
-    RentMailer.new_rent(self).deliver_later
+    RentMailer.new_rent(self).deliver_now
   end
 end
