@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mail new rent</title>
+  <title> <%= t('send_mail.mail_new_rent') %> </title>
 </head>
 <body>
-  <h2>Mail for new rent</h2>
-  <p><strong>Created date rent:</strong> <em><%= @rent.created_at%></em></p>
-  <p><strong>Book details</strong></p>
+  <h2> <%= t('send_mail.mail_for_new_rent') %> </h2>
+  <p><strong> <%= t('send_mail.created_date_rent') %> :</strong> <em><%= @rent.created_at%></em></p>
+  <p><strong> <%= t('send_mail.book_details') %> </strong></p>
   <ul>
-    <li><strong>Title: </strong> <em><%= @book.title%></em> </li>
-    <li><strong>Author: </strong> <em><%= @book.author%></em> </li>
-    <li><strong>Genre: </strong> <em><%= @book.genre%></em> </li>
-    <li><strong>Year: </strong> <em><%= @book.year%></em> </li>
-    <li><strong>Publisher: </strong> <em><%= @book.publisher%></em> </li>
-    <li><strong>Description: </strong> <em><%= @book.description%></em> </li>
-    <li><strong>Image: </strong> <em><%= @book.image%></em> </li>
+    <li><strong> <%= t('send_mail.title') %> : </strong> <em><%= @book.title%></em> </li>
+    <li><strong> <%= t('send_mail.author') %> : </strong> <em><%= @book.author%></em> </li>
+    <li><strong> <%= t('send_mail.genre') %> : </strong> <em><%= @book.genre%></em> </li>
+    <li><strong> <%= t('send_mail.year') %> : </strong> <em><%= @book.year%></em> </li>
+    <li><strong> <%= t('send_mail.publisher') %> : </strong> <em><%= @book.publisher%></em> </li>
+    <li><strong> <%= t('send_mail.description') %> : </strong> <em><%= @book.description%></em> </li>
+    <li><strong> <%= t('send_mail.image') %> : </strong> <em><%= @book.image%></em> </li>
   </ul>
-  <p><strong>Start date: </strong> <em><%= @rent.init_date%></em></p>
-  <p><strong>End date:  </strong> <em><%= @rent.end_date%></em></p>
+  <p><strong> <%= t('send_mail.start_date') %> : </strong> <em><%= @rent.init_date%></em></p>
+  <p><strong> <%= t('send_mail.end_date') %> :  </strong> <em><%= @rent.end_date%></em></p>
 </body>
 </html>

@@ -1,6 +1,6 @@
 class Rent < ApplicationRecord
   validates :init_date, :end_date, presence: true
-  validate :valid_init_end_dates, :overlap_dates
+  validate :valid_init_end_dates#, :overlap_dates
   belongs_to :user, optional: true
   belongs_to :book, optional: true
   after_create :send_mail
