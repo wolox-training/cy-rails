@@ -5,4 +5,12 @@ class Book < ApplicationRecord
   def actual_rent
     rents.between_from_dates.first
   end
+
+  def self.name_books
+    if Book.any?
+      Book.all.map { |b| b.title }
+    else
+      []
+    end
+  end
 end
