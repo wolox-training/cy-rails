@@ -36,6 +36,8 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
   config.before(:all) do
     FactoryBot.factories.clear
     FactoryBot.sequences.clear

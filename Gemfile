@@ -62,7 +62,6 @@ group :test do
   gem 'faker'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
-  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.8'
 end
 
@@ -71,5 +70,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'devise_token_auth'
+gem 'wor-paginate'
+gem 'active_model_serializers'
 gem 'versionist'
-gem 'omniauth'
+gem 'rails-controller-testing'
