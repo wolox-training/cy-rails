@@ -8,7 +8,7 @@ class Book < ApplicationRecord
 
   def self.name_books
     if Book.any?
-      Book.all.map { |b| b.title }
+      Book.all.map { |b| [b.title] }
     else
       []
     end

@@ -7,8 +7,8 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
 
   def self.name_users
-    if self.any?
-      self.all.map { |u| u.email }
+    if User.any?
+      User.all.map { |u| [u.email] }
     else
       []
     end

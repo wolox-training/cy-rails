@@ -23,7 +23,7 @@ ActiveAdmin.register Rent do
     f.inputs do
       f.input :init_date
       f.input :end_date
-      f.input :book_id, header: 'Text',as: :select, collection: Book.name_books
+      f.input :book_id, as: :select, collection: Book.name_books
       f.input :user_id, as: :select, collection: User.name_users
     end
     f.actions
