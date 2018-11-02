@@ -16,7 +16,7 @@ class Rent < ApplicationRecord
   }
 
   def valid_init_end_dates
-    errors.add(:rent, 'Incorrect date, end date less than init date') if init_date < end_date
+    errors.add(:rent, 'Incorrect date, end date less than init date') unless init_date < end_date
   end
 
   def overlap_dates
