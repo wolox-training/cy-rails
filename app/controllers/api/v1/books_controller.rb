@@ -3,13 +3,11 @@ module Api
     class BooksController < ApplicationController
       before_action :authenticate_api_v1_user!
       def show
-        @book = Book.find(params[:id])
-        render json: @book
+        render json: Book.find(params[:id])
       end
 
       def index
-        @books = Book.all
-        render json: @books
+        render json: Book.all
       end
     end
   end

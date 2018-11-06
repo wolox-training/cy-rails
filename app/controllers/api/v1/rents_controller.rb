@@ -3,17 +3,11 @@ module Api
     class RentsController < ApplicationController
       before_action :authenticate_api_v1_user!
       def index
-        @rents = Rent.all
-        render json: @rents
+        render json: Rent.all
       end
 
       def create
-        @rents = Rent.new(params[:rent])
-        if @rents.save
-          render json: @rents
-        else
-          render 'new'
-        end
+        render json: Rent.create!(rent_params)
       end
     end
   end
