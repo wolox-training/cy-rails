@@ -9,6 +9,12 @@ module Api
       def create
         render json: Rent.create!(rent_params)
       end
+
+      private
+
+      def rent_params
+        params.require(:rent).permit(:book_id, :user_id, :init_date, :end_date)
+      end
     end
   end
 end
