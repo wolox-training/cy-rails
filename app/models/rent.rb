@@ -22,7 +22,8 @@ class Rent < ApplicationRecord
   end
 
   def overlap_dates
-    errors.add(:rent, 'Overlapping on dates') unless overlapping.empty?
+    errors.add(:rent, 'Overlapping on dates') unless
+      overlapping(book_id, id, init_date, end_date).empty?
   end
 
   def send_mail
