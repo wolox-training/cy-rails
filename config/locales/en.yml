@@ -30,4 +30,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  send_mail:
+    hello: 'Hello world'
+    title: 'Title'
+    author: 'Author'
+    genre: 'Genre'
+    year: 'Year'
+    publisher: 'Publisher'
+    description: 'Description'
+    image: 'Image'
+    start_date: 'Start date'
+    end_date: 'End date'
+    book_details: 'Book details'
+    created_new_rent: 'Created date rent'
+    mail_new_rent: 'Mail new rent'
+    mail_for_new_rent: 'Mail for new rent'
+    created_date_rent: 'Created date rent'

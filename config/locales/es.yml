@@ -1,0 +1,17 @@
+es:
+  send_mail:
+    hello: 'Hola mundo'
+    title: 'Título'
+    author: 'Autor'
+    genre: 'Género'
+    year: 'Año'
+    publisher: 'Editorial'
+    description: 'Descripción'
+    image: 'Imagen'
+    start_date: 'Fecha inicio'
+    end_date: 'Fecha fin'
+    book_details: 'Detalles del libro'
+    created_new_rent: 'Fecha creación renta'
+    mail_new_rent: 'Correo nueva renta'
+    mail_for_new_rent: 'Correo de nueva renta'
+    created_date_rent: 'Fecha creación renta'

@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   def not_found
     render json: { error: 'record not found' }, status: :not_found
   end
+
+  def set_locale
+    I18n.locale = current_api_v1_user.locale
+  end
 end
