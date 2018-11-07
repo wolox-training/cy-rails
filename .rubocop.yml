@@ -2,6 +2,8 @@ Documentation:
   Enabled: false
 LineLength:
   Max: 99
+  Exclude:
+    - 'spec/**/*_spec.rb'
 Style/FrozenStringLiteralComment:
   Enabled: false
 Metrics/BlockLength:

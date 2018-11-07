@@ -7,7 +7,7 @@ module Api
       end
 
       def index
-        render json: Book.all
+        render_paginated json: Book.all
       end
     end
   end

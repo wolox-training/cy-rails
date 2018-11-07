@@ -4,7 +4,7 @@ module Api
       before_action :current_user!
       before_action :set_locale, only: [:create]
       def index
-        render authorize json: Rent.all
+        render_paginated authorize json: Rent.all
       end
 
       def create
