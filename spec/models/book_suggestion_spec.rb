@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe BookSuggestion do
-  subject(:book_suggestion) { build(:book_suggestion) }
+  subject(:user) { create(:user) }
+  subject(:book_suggestion) { build(:book_suggestion, user: user) }
   it { is_expected.to be_valid }
   it { is_expected.to validate_presence_of(:author) }
   it { is_expected.to validate_presence_of(:title) }

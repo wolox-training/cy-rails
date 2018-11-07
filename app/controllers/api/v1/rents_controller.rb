@@ -4,7 +4,7 @@ module Api
       before_action :authenticate_user!
       before_action :set_locale, only: [:create]
       def index
-        render authorize json: current_user.rents
+        render_paginated authorize json: current_user.rents
       end
 
       def create

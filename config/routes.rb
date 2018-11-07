@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :books, only: [:index, :show]
     resources :rents, only: [:index, :create]
     resources :users, only: [:index]
+    resources :book_suggestion, only: [:create]
   end
   mount_devise_token_auth_for 'User', at: 'auth'
  end
