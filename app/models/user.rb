@@ -5,12 +5,5 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :locale, presence: true
   has_many :rents, dependent: :nullify
   include DeviseTokenAuth::Concerns::User
-
-  def self.name_users
-    if User.any?
-      User.all.map { |u| [u.email] }
-    else
-      []
-    end
-  end
+  scope :name_users, -> { all.map { |u| [u.email, u.id] } }
 end
