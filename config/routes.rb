@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'application#index'
   api_version(module: 'api/v1', path: { value: 'api/v1' }) do
-    resources :books, only: [:index, :show]
+    resources :books, only: [:index, :show, :book_info_external] do
+      get :book_info_external, on: :collection
+    end
     resources :rents, only: [:index, :create]
     resources :users, only: [:index]
     resources :book_suggestion, only: [:create]
