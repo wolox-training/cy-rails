@@ -77,3 +77,4 @@ gem 'rails-controller-testing'
 gem 'sidekiq'
 gem 'rails-i18n'
 gem 'activeadmin'
+gem "pundit"
