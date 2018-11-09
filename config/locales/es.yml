@@ -15,6 +15,9 @@ es:
     mail_new_rent: 'Correo nueva renta'
     mail_for_new_rent: 'Correo de nueva renta'
     created_date_rent: 'Fecha creación renta'
+    mail_expired_rent: 'Correo renta va a expirar'
+    mail_for_expired_rent: 'Correo de expiración renta'
+    message_expired_rent: 'Querido usuario, tú renta expira el día de hoy, te mandamos los datos de tu renta.'
   pundit:
    default: ‘No puedes realizar esta acción.’
    rent_policy:

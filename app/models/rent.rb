@@ -6,7 +6,7 @@ class Rent < ApplicationRecord
   after_create :send_mail
 
   scope :between_from_dates, -> { where('DATE(?) BETWEEN init_date AND end_date', Time.current) }
-
+  scope :expired_date, -> { where(end_date: Time.current) }
   scope :overlapping, lambda { |book_id, id, init_date, end_date|
     Rent.where(book_id: book_id).where.not(id: id).where(
       "DATE(:init_date) BETWEEN init_date AND end_date OR
