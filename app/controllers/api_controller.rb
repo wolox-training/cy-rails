@@ -16,14 +16,11 @@ class ApiController < ActionController::Base
     I18n.locale = current_user.locale
   end
 
-  def pundit_user
-    current_user
-  end
-
   private
 
   def user_not_authorized
-    flash[:warning] = 'You are not authorized to perform this action.'
-    redirect_to(request.referer || root_path)
+    policy_name = exception.policy.class.to_s.underscore
+    message = t "#{policy_name}.#{exception.query}", scope: 'pundit', default: :default
+    render json: { error: message }, status: :forbidden
   end
 end

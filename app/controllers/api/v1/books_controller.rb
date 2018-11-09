@@ -1,7 +1,7 @@
 module Api
   module V1
     class BooksController < ApiController
-      before_action :current_user
+      before_action :authenticate_user!
       def show
         render json: Book.find(params[:id])
       end

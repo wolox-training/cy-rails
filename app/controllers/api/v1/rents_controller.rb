@@ -1,14 +1,17 @@
 module Api
   module V1
     class RentsController < ApiController
-      before_action :current_user!
+      before_action :authenticate_user!
       before_action :set_locale, only: [:create]
       def index
-        render authorize json: Rent.all
+        render authorize json: current_user.rents
       end
 
       def create
-        render authorize json: Rent.create!(rent_params)
+        rent = Rent.new(rent_params)
+        authorize rent
+        rent.save!
+        render json: rent, status: :created
       end
 
       private

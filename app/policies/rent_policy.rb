@@ -1,23 +1,11 @@
-class ArticlePolicy < ApplicationPolicy
-  def index?
-    true
+class RentPolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      scope.where(user: user)
+    end
   end
 
   def create?
-    pundit_user.present?
-  end
-
-  def update?
-    return true if pundit_user.present? && pundit_user == rent.user_id
-  end
-
-  def destroy?
-    return true if pundit_user.present? && pundit_user == rent.user_id
-  end
-
-  private
-
-  def rent
-    record
+    record.user_id.nil? || record.user == user
   end
 end
