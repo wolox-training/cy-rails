@@ -15,3 +15,7 @@ es:
     mail_new_rent: 'Correo nueva renta'
     mail_for_new_rent: 'Correo de nueva renta'
     created_date_rent: 'Fecha creación renta'
+  pundit:
+   default: ‘No puedes realizar esta acción.’
+   rent_policy:
+     create?: ‘No puedes crear este rent!’

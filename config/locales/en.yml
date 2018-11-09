@@ -46,3 +46,7 @@ en:
     mail_new_rent: 'Mail new rent'
     mail_for_new_rent: 'Mail for new rent'
     created_date_rent: 'Created date rent'
+  pundit:
+   default: ‘You cannot perform this action.’
+   rent_policy:
+     create?: ‘You cannot create this rent!’
