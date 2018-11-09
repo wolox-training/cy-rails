@@ -4,6 +4,7 @@ class User < ApplicationRecord
           :trackable, :validatable
   validates :first_name, :last_name, :locale, presence: true
   has_many :rents, dependent: :nullify
-  include DeviseTokenAuth::Concerns::User
+  has_many :book_suggestions, dependent: :nullify
   scope :name_users, -> { all.map { |u| [u.email, u.id] } }
+  include DeviseTokenAuth::Concerns::User
 end
