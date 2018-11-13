@@ -1,5 +1,5 @@
-class RentMailer < ApplicationMailer
-  def new_rent(rent)
+class RentCreateMailer < ApplicationMailer
+  def create_rent(rent)
     @rent = rent
     @book = @rent.book
     @user = @rent.user

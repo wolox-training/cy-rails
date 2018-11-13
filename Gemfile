@@ -79,3 +79,4 @@ gem 'rails-i18n'
 gem 'activeadmin'
 gem "pundit"
 gem 'httparty'
+gem 'sidekiq-scheduler', '~> 2.0', '>= 2.0.8'

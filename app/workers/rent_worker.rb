@@ -1,9 +1,11 @@
+require 'sidekiq-scheduler'
 class RentWorker
   include Sidekiq::Worker
 
-  def perform(id)
-    # Do something
-    @rent = Rent.find(id).deliver_now
-    RentMailer.new_rent(@rent)
+  def perform
+    expired_rents = Rent.expired_date.pluck(:id)
+    expired_rents.each do |r|
+      RentExpirationMailer.expired_rent(r).deliver_now
+    end
   end
 end
