@@ -4,28 +4,28 @@ module OpenLibraryService
   def book_info(isbn)
     base_uri = "https://openlibrary.org/api/books?bibkeys=ISBN:#{isbn}&format=json&jscmd=data"
     response = HTTParty.get(base_uri, format: :json)
-    valid_isbn(response)
+    valid_isbn(response, isbn)
   end
 
   private
 
-  def valid_isbn(response)
+  def valid_isbn(response, isbn)
     if response.keys.any?
-      hash_info_book(response)
+      hash_info_book(response, isbn)
     else
-      []
+      { message: 'Book information not found' }
     end
   end
 
-  def hash_info_book(response)
+  def hash_info_book(response, isbn)
     response_isbn = response[response.keys.first]
-    info_external_books = Hash[isbn: response.keys.first,
-                               title: get_title(response_isbn),
-                               subtitle: get_subtitle(response_isbn),
-                               number_pages: get_number_pages(response_isbn),
-                               authors: get_authors(response_isbn)]
-
-    info_external_books
+    {
+      isbn: isbn,
+      title: response_isbn['title'],
+      subtitle: response_isbn['subtitle'],
+      number_pages: response_isbn['number_of_pages'],
+      authors: response_isbn['authors'].map { |a| a['name'] }
+    }
   end
 
   def get_title(response_isbn)

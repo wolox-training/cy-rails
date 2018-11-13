@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'application#index'
   api_version(module: 'api/v1', path: { value: 'api/v1' }) do
     resources :books, only: [:index, :show, :book_info_external] do
-      get :book_info_external, on: :collection
+      collection do
+        get :book_info_external
+      end
     end
     resources :rents, only: [:index, :create]
     resources :users, only: [:index]
