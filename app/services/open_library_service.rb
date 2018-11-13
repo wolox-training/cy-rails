@@ -27,24 +27,4 @@ module OpenLibraryService
       authors: response_isbn['authors'].map { |a| a['name'] }
     }
   end
-
-  def get_title(response_isbn)
-    response_isbn['title']
-  end
-
-  def get_subtitle(response_isbn)
-    response_isbn['subtitle']
-  end
-
-  def get_number_pages(response_isbn)
-    response_isbn['number_of_pages']
-  end
-
-  def get_authors(response_isbn)
-    authors = []
-    response_isbn['authors'].each do |aut|
-      authors << aut['name']
-    end
-    authors
-  end
 end
