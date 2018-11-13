@@ -78,3 +78,4 @@ gem 'sidekiq'
 gem 'rails-i18n'
 gem 'activeadmin'
 gem "pundit"
+gem 'httparty'
