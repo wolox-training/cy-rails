@@ -1,0 +1,25 @@
+@import 'colors';
+
+.title {
+  max-width: 400px;
+  color: $dark-black;
+  font-size: 30px;
+  margin: 50px;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  padding-left: 33px;
+
+  &::before {
+    background-image: url(assets/triangle.svg);
+    background-repeat: no-repeat;
+    content: '';
+    height: 90px;
+    width:  70px;
+    position: absolute;
+    top: -32px;
+    right: 191px;
+    z-index: -1;
+  }
+}
+
