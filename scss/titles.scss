@@ -1,7 +1,7 @@
-@import 'colors';
+@import 'variables';
 
 .title {
-  color: $dark-black;
+  color: $color-dark-black;
   font-size: 30px;
   position: relative;
   padding: 42px 72px;
@@ -10,8 +10,8 @@
     background-image: url(assets/triangle.svg);
     background-repeat: no-repeat;
     content: '';
-    height: 90px;
-    width:  70px;
+    height: $title-decoration-height;
+    width:  $title-decoration-width;
     position: absolute;
     top: 9px;
     right: 261px;
