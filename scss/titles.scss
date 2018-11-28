@@ -1,0 +1,21 @@
+@import 'colors';
+
+.title {
+  color: $dark-black;
+  font-size: 30px;
+  position: relative;
+  padding: 42px 72px;
+
+  &::before {
+    background-image: url(assets/triangle.svg);
+    background-repeat: no-repeat;
+    content: '';
+    height: 90px;
+    width:  70px;
+    position: absolute;
+    top: 9px;
+    right: 261px;
+    z-index: -1;
+  }
+}
+
