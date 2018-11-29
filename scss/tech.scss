@@ -1,0 +1,44 @@
+@import 'variables';
+
+.tech {
+  background: $color-green;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 300px;
+  justify-content: space-between;
+  margin: 15px 20px;
+  padding: 20px;
+  position: relative;
+  width: 200px;
+
+  &::before {
+    content: '';
+    border-radius: 5px;
+    border: 2px solid $color-green;
+    height: 300px;
+    position: absolute;
+    z-index: -1;
+    bottom: 10px;
+    right: 10px;
+    width: 200px;
+  }
+}
+
+.text {
+  margin: 6px 0;
+  text-align: center;
+
+}
+
+.text-bold {
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.tech-img {
+  height: $title-decoration-height;
+  margin: 6px 0px;
+  width: 100%;
+}
