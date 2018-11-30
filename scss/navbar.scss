@@ -1,0 +1,30 @@
+@import 'variables';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 200;
+  background: white;
+  height: $nav-height;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+.nav-img { 
+  left: 20px;
+  padding: 26px 0px;
+  position: absolute;
+  width: 200px;
+}
+
+.nav-text {
+  color: $color-dark-black;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 400;
+  right: 20px;
+  top: 31px;
+}
