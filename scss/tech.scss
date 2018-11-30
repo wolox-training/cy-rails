@@ -31,12 +31,10 @@
     z-index: -1;
   }
 
-  &:hover {
-    &::before {
-      transform: translate(25px, 25px);
-      transition-property: all;
-      transition-duration: 0.5s;
-    }
+  &:hover::before {
+    transform: translate(25px, 25px);
+    transition-property: all;
+    transition-duration: 0.5s;
   }
 }
 
