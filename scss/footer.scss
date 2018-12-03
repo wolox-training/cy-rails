@@ -1,0 +1,25 @@
+@import 'variables';
+
+.footer {
+  display: flex;
+  padding: 20px;
+  background-color: $color-light-blue;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-text {
+  color: $color-white;
+  font-size: $text-small;
+  text-align: right;
+}
+
+.f-title{
+  font-size: $text-medium;
+  text-align: center;
+}
+
+.f-logo {
+  height: 43px;
+  text-align: center;
+}
