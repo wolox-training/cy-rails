@@ -4,17 +4,17 @@
   color: $color-dark-black;
   font-size: 30px;
   position: relative;
-  padding: 42px 72px;
+  padding: 42px 85px;
 
   &::before {
     background-image: url(assets/triangle.svg);
     background-repeat: no-repeat;
     content: '';
     height: $title-decoration-height;
-    width:  $title-decoration-width;
     position: absolute;
-    top: 9px;
     right: 261px;
+    top: 9px;
+    width:  $title-decoration-width;
     z-index: -1;
   }
 }
