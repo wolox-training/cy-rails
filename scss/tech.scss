@@ -3,7 +3,6 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto;
   padding-top: 100px;
 
   .tech-container {
@@ -51,4 +50,28 @@
   border-right: 2px $color-green solid;
   grid-column: colum 2;
   grid-row: row 2;
+}
+
+@media only screen and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 100%;
+
+    .tech-container {
+      flex-direction: column;
+      grid-column-start: 1;
+      grid-row-end: 3;
+      justify-self: center;
+    }
+
+    .tech {
+      border-top: 2px $color-green solid;
+    }
+  }
+
+  .tech-main {
+    border-right: 2px $color-white solid;
+    justify-self: center;
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
 }
