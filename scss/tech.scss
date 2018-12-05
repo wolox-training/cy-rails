@@ -61,16 +61,15 @@
       grid-column-start: 1;
       grid-row-end: 3;
       justify-self: center;
-    }
 
-    .tech {
-      border-top: 2px $color-green solid;
+      .tech {
+        border-top: 2px $color-green solid;
+      }
     }
   }
 
-  .tech-main:nth-child(2) {
-    border-right: none;
-    border-top: none;
+  .tech-main {
+    border: none;
     justify-self: center;
     grid-column-start: 1;
     grid-row-start: 2;
