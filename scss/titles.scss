@@ -19,3 +19,13 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .title {
+    justify-self: center;
+    grid-column-start: 1;
+
+    &::before {
+      left: 42px;
+    }
+  }
+}
